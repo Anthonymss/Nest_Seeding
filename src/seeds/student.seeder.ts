@@ -30,11 +30,16 @@ export class StudentSeeder {
     const courses = await this.courseRepo.find();
     if (courses.length === 0) return;
 
-    const students = Array.from({ length: count }).map(() => ({
-      name: faker.person.firstName(),
-      email: faker.internet.email(),
-      courses: [courses[Math.floor(Math.random() * courses.length)]],
-    }));
+    const students = Array.from({ length: count }).map(() => {
+      const firstName = faker.person.firstName();
+      const email = faker.internet.email({ firstName });
+      return {
+        name: firstName,
+        email,
+        courses: [courses[Math.floor(Math.random() * courses.length)]],
+      };
+    });
+    
 
     await this.studentRepo.save(students);
   }

@@ -11,31 +11,31 @@ export class SeederService {
     private readonly studentSeeder: StudentSeeder,
   ) {}
   async seed() {    
-    /*await this.teacherSeeder.seed();
+    await this.teacherSeeder.seed();
     await this.courseSeeder.seed();
     await this.studentSeeder.seed();
-    console.log('Se cargaron listas correctamente');
-    */
+    console.log('se agregaron todos los datos de listas');
+    
     }
   async generateTeachersDynamic() {
-    await this.teacherSeeder.generateTeachers(10);
+    await this.teacherSeeder.generateTeachers(100);
     console.log('.')
   }
 
   async generateCoursesDynamic() {
-    await this.courseSeeder.generateCourses(10);
+    await this.courseSeeder.generateCourses(100);
     console.log('..')
   }
 
   async generateStudentsDynamic() {
-    await this.studentSeeder.generateStudents(10);
+    await this.studentSeeder.generateStudents(100);
     console.log('...')
   }
   async generateAllDynamic(){
     await this.generateTeachersDynamic();
     await this.generateCoursesDynamic();
     await this.generateStudentsDynamic();
-    console.log('se agregaron todos los datos predefinidos')
+    console.log('se agregaron todos los datos dinamicos')
   }
   
 }

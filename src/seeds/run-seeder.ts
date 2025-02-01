@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.createApplicationContext(SeederModule);
   const seeder = app.get(SeederService);
 
-  await seeder.seed();
+  await seeder.seed();//listas
   await seeder.generateAllDynamic();
 
   await app.close();
