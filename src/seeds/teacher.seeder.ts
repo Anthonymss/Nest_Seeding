@@ -32,5 +32,6 @@ export class TeacherSeeder {
     const existingTeachers = await this.teacherRepo.count();
     if (existingTeachers > 0) return;
     await this.loadPredefinedTeachers();
+    console.log("se cargo lista fija de techers ");
   }
 }

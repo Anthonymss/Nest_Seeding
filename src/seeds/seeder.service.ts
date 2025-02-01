@@ -13,9 +13,7 @@ export class SeederService {
   async seed() {    
     await this.teacherSeeder.seed();
     await this.courseSeeder.seed();
-    await this.studentSeeder.seed();
-    console.log('se agregaron todos los datos de listas');
-    
+    await this.studentSeeder.seed();    
     }
   async generateTeachersDynamic() {
     await this.teacherSeeder.generateTeachers(100);

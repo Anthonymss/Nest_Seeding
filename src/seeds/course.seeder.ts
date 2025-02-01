@@ -43,5 +43,6 @@ export class CourseSeeder {
     const existingCourses = await this.courseRepo.count();
     if (existingCourses > 0) return;
     await this.loadPredefinedCourses();
+    console.log("se cargo lista fija de courses");
   }
 }

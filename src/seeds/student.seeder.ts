@@ -48,5 +48,6 @@ export class StudentSeeder {
     const existingStudents = await this.studentRepo.count();
     if (existingStudents > 0) return;
     await this.loadPredefinedStudents();
+    console.log("se cargo lista fija de students ");
   }
 }
